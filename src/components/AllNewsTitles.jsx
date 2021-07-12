@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ListNews() {
+export default function AllNewsTitles() {
   const [allNews, setAllNews] = useState([]);
   useEffect(() => {
     fetch("https://nc-news-proj.herokuapp.com/api/articles")
@@ -8,7 +8,7 @@ export default function ListNews() {
       .then((parsedData) => setAllNews(parsedData.articles));
   });
   return (
-    <div className="ListNews">
+    <div className="NewsTitlesList">
       {allNews.map((entry) => (
         <p>{entry.title}</p>
       ))}
