@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
+import ListNews from "./components/ListNews";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Running from React
+        <ListNews />
       </header>
     </div>
   );
