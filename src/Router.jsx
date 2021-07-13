@@ -1,16 +1,14 @@
-import { BrowserRouter, Switch } from "react-router-dom";
-import ListNews from "./Routes/ListNews";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import MostRecentNews from "./Routes/MostRecentNews";
 
 export default function Router() {
   return (
-    <main>
-      <BrowserRouter>
-        <Switch>
-          <Router exact path="/">
-            <ListNews />
-          </Router>
-        </Switch>
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <MostRecentNews />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }

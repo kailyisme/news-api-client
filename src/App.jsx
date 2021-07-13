@@ -1,13 +1,12 @@
 import "./App.css";
-import ListNews from "./Routes/ListNews";
+import Router from "./Router";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>NC News</h1>
-        <ListNews />
-      </header>
+        <img src="/nc_news.png" className="header-image" alt="website title - NC News with an arrow underneath" />
+        <Router />
+        <footer>© Kaily Newman 2021</footer>
     </div>
   );
 }
