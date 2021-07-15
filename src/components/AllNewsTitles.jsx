@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function AllNewsTitles({ limit, topic, order = "desc" }) {
   const [allNews, setAllNews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const options = { topic, order };
   let query = "";
   if (!limit) {
@@ -17,21 +18,26 @@ export default function AllNewsTitles({ limit, topic, order = "desc" }) {
     }
   });
   useEffect(() => {
-    console.log(query + "<<<query");
     fetch("https://nc-news-proj.herokuapp.com/api/articles" + query)
       .then((data) => data.json())
       .then((parsedData) => {
-        console.log("articles>>>" + parsedData.articles)
         setAllNews(parsedData.articles);
+        setIsLoading(false);
       });
   }, [query]);
+  if (isLoading)
+    return (
+      <main>
+        <h1>Loading!</h1>
+      </main>
+    );
   return (
-    <div className="GridNewsTitles">
+    <main className="GridNewsTitles">
       {allNews.slice(0, limit).map((entry) => (
-        <p className="articleTitle" key={`article${entry.title}`}>
+        <a href={`/articles/${entry.article_id}`} className="articleTitle" key={`article${entry.title}`}>
           {entry.title}
-        </p>
+        </a>
       ))}
-    </div>
+    </main>
   );
 }

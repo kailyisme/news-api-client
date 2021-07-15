@@ -2,6 +2,7 @@
   text-align: center;
   min-height: 100vh;
   background-color: #282c34;
+  color: white;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-areas:
@@ -25,13 +26,9 @@
 }
 
 header {
-  grid-area: header;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   padding: 2%;
 }
 
@@ -40,7 +37,10 @@ header {
   float: left;
   padding: 5%;
   max-height: 20vh;
-  /* background-color: antiquewhite; */
+}
+
+main {
+  grid-area: content;
 }
 
 .App-link {
@@ -48,7 +48,6 @@ header {
 }
 
 .GridNewsTitles {
-  grid-area: content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 400px));
   grid-template-rows: repeat(calc, 200px);
@@ -62,7 +61,7 @@ header {
   border-radius: 20px;
   padding: 10%;
   margin: 10%;
-  &:hover{
+  &:hover {
     border-radius: 1000px;
     filter: drop-shadow(16px 16px 10px #101214);
     cursor: pointer;
@@ -81,11 +80,27 @@ footer {
   flex-direction: column;
 }
 
-.topicButton{
+.topicButton {
   padding: 20px;
   margin: 20px;
   margin-left: 40px;
   &:hover {
     cursor: pointer;
   }
+}
+
+.Article {
+
+}
+
+.Error-body {
+
+}
+
+.burger-menu {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  width: 40px;
+  color: white;
 }
