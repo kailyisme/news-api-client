@@ -59,9 +59,14 @@ header {
 .articleTitle {
   background-color: #465675;
   border: 2px solid;
-  border-radius: 50px;
+  border-radius: 20px;
   padding: 10%;
   margin: 10%;
+  &:hover{
+    border-radius: 1000px;
+    filter: drop-shadow(16px 16px 10px #101214);
+    cursor: pointer;
+  }
 }
 
 footer {
@@ -80,4 +85,7 @@ footer {
   padding: 20px;
   margin: 20px;
   margin-left: 40px;
+  &:hover {
+    cursor: pointer;
+  }
 }
