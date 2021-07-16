@@ -34,7 +34,7 @@ export default function AllNewsTitles({ limit, topic, order = "desc" }) {
   return (
     <main className="GridNewsTitles">
       {allNews.slice(0, limit).map((entry) => (
-        <a href={`/articles/${entry.article_id}`} className="articleTitle" key={`article${entry.title}`}>
+        <a href={`/articles/${entry.article_id}`} className="articleTitle App-link" key={`article${entry.title}`}>
           {entry.title}
         </a>
       ))}
