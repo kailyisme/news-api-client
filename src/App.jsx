@@ -1,10 +1,8 @@
-import { useState } from "react";
 import "./App.scss";
-import BurgerMenu from "./resources/BurgerMenu.svg";
 import Router from "./Router";
+import BurgerMenu from "./components/BurgerMenu";
 
 function App() {
-  const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
   return (
     <div className="App">
       <img
@@ -12,13 +10,7 @@ function App() {
         className="header-image"
         alt="website title - NC News with an arrow underneath"
       />
-      <button
-        className="burger-menu-button"
-        onClick={() => setIsMenuCollapsed((currentState) => !currentState)}
-      >
-        <img src={BurgerMenu} alt="burger menu" />
-      </button>
-      {isMenuCollapsed?null:<div className="burger-menu"></div>}
+      <BurgerMenu />
       <Router />
       <footer>© Kaily Newman 2021</footer>
     </div>
