@@ -35,7 +35,8 @@ header {
 .header-image {
   grid-area: header-image;
   float: left;
-  padding: 5%;
+  margin-left: 40px;
+  margin-top: 20px;
   max-height: 20vh;
 }
 
@@ -90,17 +91,15 @@ footer {
 }
 
 .Article {
-
 }
 
 .Error-body {
-
 }
 
 .burger-menu {
   position: absolute;
-  top: 5vh;
-  right: 5vw;
+  top: min(5vw, 5vh);
+  right: min(5vw, 5vh);
   width: 40px;
   color: white;
 }
