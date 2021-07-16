@@ -85,6 +85,7 @@ footer {
   padding: 20px;
   margin: 20px;
   margin-left: 40px;
+  border-radius: 20px;
   &:hover {
     cursor: pointer;
   }
@@ -102,4 +103,7 @@ footer {
   right: min(5vw, 5vh);
   width: 40px;
   color: white;
+  border: none;
+  background: none;
+  &:hover {cursor: pointer;}
 }

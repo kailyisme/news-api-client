@@ -12,9 +12,9 @@ function App() {
         className="header-image"
         alt="website title - NC News with an arrow underneath"
       />
-      <a className="burger-menu">
+      <button className="burger-menu">
         <img src={BurgerMenu} alt="burger menu" />
-      </a>
+      </button>
       <Router />
       <footer>© Kaily Newman 2021</footer>
     </div>
