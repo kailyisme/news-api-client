@@ -12,9 +12,13 @@ function App() {
         className="header-image"
         alt="website title - NC News with an arrow underneath"
       />
-      <button className="burger-menu">
+      <button
+        className="burger-menu-button"
+        onClick={() => setIsMenuCollapsed((currentState) => !currentState)}
+      >
         <img src={BurgerMenu} alt="burger menu" />
       </button>
+      {isMenuCollapsed?null:<div className="burger-menu"></div>}
       <Router />
       <footer>© Kaily Newman 2021</footer>
     </div>

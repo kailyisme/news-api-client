@@ -97,13 +97,23 @@ footer {
 .Error-body {
 }
 
-.burger-menu {
+.burger-menu-button {
   position: absolute;
   top: min(5vw, 5vh);
   right: min(5vw, 5vh);
   width: 40px;
-  color: white;
   border: none;
   background: none;
   &:hover {cursor: pointer;}
+}
+
+.burger-menu {
+  position: absolute;
+  top: min(5vw, 5vh);
+  right: min(5vw, 5vh);
+  translate: 0px 40px;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
