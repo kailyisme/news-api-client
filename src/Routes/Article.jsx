@@ -13,6 +13,12 @@ export default function Article() {
         setIsLoading(false);
       });
   }, [article_id]);
+  function parseDate(dateString) {
+    const regex = /^(\d{4})-(\d{2})-(\d{2})/;
+    const matches = dateString.match(regex);
+    const [_, year, month, day] = matches;
+    return `${day}/${month}/${year}`;
+  }
   if (isLoading)
     return (
       <header>
@@ -23,9 +29,15 @@ export default function Article() {
     <>
       <header>
         <h1>{article.title}</h1>
+        <h4>
+          by <cite>{article.author}</cite>
+        </h4>
       </header>
       <main className="Article">
-
+        <div className="article-date">{parseDate(article.created_at)}</div>
+        <br />
+        <p>{article.body}</p>
+        <h2>Comments <button>show</button></h2>
       </main>
     </>
   );

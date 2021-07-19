@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BurgerMenuIMG from "../resources/BurgerMenuIMG.svg";
 
-export default function BurgerMenu() {
+export default function BurgerMenu({children}) {
   const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
   return (
     <>
@@ -11,7 +11,7 @@ export default function BurgerMenu() {
       >
         <img src={BurgerMenuIMG} alt="burger menu" />
       </button>
-      {isMenuCollapsed ? null : <div className="burger-menu"></div>}
+      {isMenuCollapsed ? null : <div className="burger-menu">{children}</div>}
     </>
   );
 }

@@ -42,6 +42,7 @@ header {
 
 main {
   grid-area: content;
+  padding: 5vw;
 }
 
 .App-link {
@@ -69,6 +70,11 @@ main {
   }
 }
 
+.article-date {
+  text-align: left;
+  margin-left: 2vw;
+}
+
 footer {
   grid-area: footer;
   background-color: #282c34;
@@ -92,9 +98,13 @@ footer {
 }
 
 .Article {
+  font-size: calc(10px + 2vmin);
+
 }
 
 .Error-body {
+  font-size: calc(10px + 2vmin);
+
 }
 
 .burger-menu-button {
