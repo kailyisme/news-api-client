@@ -33,7 +33,7 @@ export default function Article() {
           by <cite>{article.author}</cite>
         </h4>
       </header>
-      <main className="Article">
+      <main className="alternative Article">
         <div className="article-date">{parseDate(article.created_at)}</div>
         <br />
         <p>{article.body}</p>

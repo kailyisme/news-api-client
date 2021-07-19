@@ -45,6 +45,13 @@ main {
   padding: 5vw;
 }
 
+@media screen and (min-width: 650px) {
+  .alternative {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -99,12 +106,10 @@ footer {
 
 .Article {
   font-size: calc(10px + 2vmin);
-
 }
 
 .Error-body {
   font-size: calc(10px + 2vmin);
-
 }
 
 .burger-menu-button {
@@ -114,7 +119,9 @@ footer {
   width: 40px;
   border: none;
   background: none;
-  &:hover {cursor: pointer;}
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .burger-menu {
