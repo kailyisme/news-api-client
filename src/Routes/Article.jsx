@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Comments from "../components/Comments";
+import { parseDate } from "../tools";
 
 export default function Article() {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [commentsCollapsed, setCommentsCollapsed] = useState(true);
+
   useEffect(() => {
     fetch("https://nc-news-proj.herokuapp.com/api/articles/" + article_id)
       .then((data) => data.json())
@@ -13,12 +17,7 @@ export default function Article() {
         setIsLoading(false);
       });
   }, [article_id]);
-  function parseDate(dateString) {
-    const regex = /^(\d{4})-(\d{2})-(\d{2})/;
-    const matches = dateString.match(regex);
-    const [_, year, month, day] = matches;
-    return `${day}/${month}/${year}`;
-  }
+
   if (isLoading)
     return (
       <header>
@@ -37,7 +36,14 @@ export default function Article() {
         <div className="article-date">{parseDate(article.created_at)}</div>
         <br />
         <p>{article.body}</p>
-        <h2>Comments <button>show</button></h2>
+        <button
+          onClick={() => {
+            setCommentsCollapsed((collapsed) => !collapsed);
+          }}
+        >
+          <h1>Comments</h1> {commentsCollapsed ? "show" : "hide"}
+        </button>
+        {commentsCollapsed ? null : <Comments article_id={article_id} />}
       </main>
     </>
   );
