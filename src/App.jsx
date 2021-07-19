@@ -10,7 +10,11 @@ function App() {
         className="header-image"
         alt="website title - NC News with an arrow underneath"
       />
-      <BurgerMenu />
+      <BurgerMenu>
+        <button onClick={() => {window.location = "/"}}>
+          Most Recent News
+        </button>
+      </BurgerMenu>
       <Router />
       <footer>© Kaily Newman 2021</footer>
     </div>

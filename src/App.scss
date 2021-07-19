@@ -153,4 +153,8 @@ footer {
   display: flex;
   flex-direction: column;
   width: 200px;
+  background-color: #282c34;
+  button {
+    padding: 20px;
+  }
 }
